@@ -1,0 +1,6 @@
+자동 형 변환(Implict Conversion)
+
+자동 형 변환 규칙
+
+  1       2            4      8        4        8
+byte -> short/char -> int -> long -> float -> double

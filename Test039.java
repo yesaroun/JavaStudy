@@ -22,6 +22,8 @@
 
 // 3 두 번째 정수 vs 세 번째 정수 크기 비교 및 자리 바꿈
 
+// test26 참고 했음
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -39,6 +41,31 @@ public class Test039{
 		System.out.print("세 번째 정수 입력 : ");
 		int nNum3 = Integer.parseInt(br.readLine());
 		
+		int nSmall1, nSmall2, nSmall3;
+		int nTemp;
+
+		if(nNum1 >= nNum2) {
+			nNum1 = nNum1^nNum2;
+			nNum2 = nNum2^nNum1;
+			nNum1 = nNum1^nNum2;
+		} 
+		
+		if(nNum1 >= nNum3) {
+			nNum1 = nNum1^nNum3;
+			nNum3 = nNum3^nNum1;
+			nNum1 = nNum1^nNum3;
+		}
+
+		if(nNum2 >= nNum3) {
+			nNum2 = nNum2^nNum3;
+			nNum3 = nNum3^nNum2;
+			nNum2 = nNum2^nNum3;
+		}
+
+		System.out.printf("%d - %d - %d\n", nNum1, nNum2, nNum3);
+
+
+		/*
 		int nSmall1, nSmall2, nSmall3;
 
 
@@ -68,6 +95,6 @@ public class Test039{
 		}
 		
 		System.out.printf("%d - %d - %d\n", nSmall1, nSmall2, nSmall3);
-		
+		*/
 	}
 }

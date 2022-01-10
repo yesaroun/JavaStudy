@@ -21,15 +21,48 @@ import java.io.IOException;
 
 public class Test031{
 	public static void main(String[] args) throws IOException{
-		char ch;
 		
-		InputStreamReader isr = new InputStreamReader(System.in);
-		BufferedReader br = new BufferedReader(isr);
-
+		/*
+		int temp;
+		
 		System.out.print("한 문자 입력 : ");
-		ch = Integer.readLine();
+		temp = System.in.read();
 
-		System.out.println(ch);
+		//System.out.println("입력 받은 값 확인 : " + temp);
+		
+		
+		// String result = temp >= 65 && temp <= 90 ? "대문자" : "대문자 아님";
+		// System.out.println("결과 : " + result);
+		
+
+		String result = temp >= 'A' && temp <= 'Z' ? "대문자" : "대문자 아님";
+		System.out.println("결과 : " + result);
+		*/
+		
+		
+		/*
+		ch
+		대문자니 ? 소문자로변환 : (소문자니 ? 대문자로변환 : 있는그대로)
+		result = 최종결과;
+		*/
+
+
+
+		String str;
+		char ch, result;
+		int num;
+		
+
+		//InputStreamReader isr = new InputStreamReader(reader);
+		//BufferedReader br = new BufferedReader(isr);
+	
+		System.out.print("한 문자 입력 : ");
+		ch = (char)System.in.read();
+
+		result = (ch >= 'A' && ch <= 'Z') ? (char)(ch+32) : ((ch >= 'a' && ch <= 'z') ? (char)(ch-32) : (char) ch); 
+
+		System.out.println(ch + " → " + result);
+		
 		
 	}
 }

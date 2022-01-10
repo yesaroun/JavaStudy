@@ -43,7 +43,7 @@ public class Test030{
 		strResult = (num >= 0) ? ((num == 0) ? "0" : "양수") : "음수";
 		==================================*/
 
-		strResult = (n>0) ? ("양수") : ( (n<0) ? ("음수") : ("0") );
+		strResult = (num>0) ? ("양수") : ( (num<0) ? ("음수") : ("0") );
 
 		// 최종 결과 출력
 		System.out.printf("%d → %s%n", num, strResult);

@@ -64,11 +64,11 @@ ex) int nNum                  float fNume
      argument of String → args
 
 Data Type             Prefix                    Exampel
-boolean               b                          bContinue
-int                      n 		   nIndex
-short		n 		   nNum
-char 		c		   cFirstInitial
-String		s(str) 		   sCustomerName(strCustomerName)
+boolean                 b                       bContinue
+int                     n 		   	nIndex
+short			n 		   	nNum
+char 			c		   	cFirstInitial
+String			s(str) 		   	sCustomerName(strCustomerName)
 
 ※ 실제 자바 프로젝트에서...
    클래스는 파스칼 표기법으로

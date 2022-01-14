@@ -11,7 +11,7 @@
 
 // 실행 예)
 /*
-	*
+    *
    ***
   *****
  *******
@@ -21,6 +21,19 @@
 
 public class Test064{
 	public static void main(String[] args){
-		
+		for(int i = 1; i<=5; i++){
+			//-- 5번 반복
+
+			for(int j=i; j<=4; j++){
+				System.out.print(" ");
+			} // 공백 출력
+
+			for(int k=1; k<=i*2-1; k++){
+				System.out.print("*");
+			} // 별 출력
+
+			System.out.println();
+			// 개행
+		}
 	}
 }

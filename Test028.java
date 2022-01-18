@@ -23,3 +23,14 @@ a || b : true
 !b        : true
 계속하려면 아무 키나 누르십시오 . . .
 */
+
+
+		int max1 = 0;
+		int max2 = 0;
+
+		for(int i=0; i<array.length; i++){
+			for(int j=0; j<array[i].length; j++){
+				max1 = 
+						
+			}
+		}

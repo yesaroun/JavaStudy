@@ -50,7 +50,7 @@ class RpsGame
 	private void comRandom()
 	{
 		Random rd = new Random();
-		comInt = rd.nextInt(3) + 1;		
+		comInt = rd.nextInt(3) + 1;		// 0 1 2 → (+1) → 1 2 3 
 	}
 	
 	// 유저가 가위바위보
@@ -68,7 +68,8 @@ class RpsGame
 		}
 		while (usInt < 1 || usInt > 3);	
 	}
-
+	
+	// 중간 결과 출력
 	public void anser()
 	{
 		if(usInt == comInt)
@@ -97,8 +98,25 @@ class RpsGame
 				win = 2;		// user 승리	
 			}
 		}
-	}
+		/* 이런 형식도 가능
+		String result = "무승부 상황입니다~!!!";
+		
+		//(유저==가위 && 컴 == 보) || (유저==바위 && 컴==가위) || (유저==보 && 컴==바위)
+		if((user==1 && com==3) || (user==2 && com==1) || (user==3 && com==2))
+		{
+			result = "당신이 승리했습니다~!!";	
+		}
+		// (유저==가위 && 컴==바위) || (유저==바위 && 컴==보) || (유저==보 && 컴==가위)
+		else if((user==1 && com==2) || (user==2 && com==3) || (user==3 && com==1))
+		{
+			result = "컴퓨터가 승리했습니다~!!!";
+		}
 
+		return result;
+		*/
+	}
+	
+	// 결과 출력
 	public void print()
 	{	
 		String[] rps = {"가위", "바위", "보"};
@@ -121,7 +139,6 @@ public class Test104
 	public static void main(String[] args)
 	{
 		RpsGame rg = new RpsGame();
-
 
 		rg.userInput();
 		rg.anser();

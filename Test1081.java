@@ -122,9 +122,27 @@ public class Test1081
 			}
 			tot += chk[i] * Integer.parseInt(str.substring(i, (i+1)));   // 뒷부분
 		}
-
-
 		
+		//----- 여기까지 수행하면 ①과 ②를 모두 끝낸 생황이며
+		//		규칙에 맞게 곱셈 연산을 수행한 결과를 모두 더한 값은
+		//		변수 tot에 담겨있는 상황이 된다.
+
+		int su = 11 - tot % 11;
+		//----- 여기까지 수행하면 ③과 ④를 모두 끝낸 생황이지만
+		//		su에 대한 연산 결과 두 자리로 나올 경우
+		//		주민번호 마지막 자리의 숫자와 비교를 수행할 수 없는 상황
+
+		su = su % 10;		// su %= 10;
+
+		if (su == Integer.parseInt(str.substring(13)))
+		{
+			System.out.println(">> 정확한 주민번호~!!!");
+		}
+		else
+		{
+			System.out.println(">> 잘못된 주민번호~!!!");
+		}
+	
 
 		
 	}

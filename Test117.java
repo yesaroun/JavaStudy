@@ -37,6 +37,7 @@
 	클래스와 메소드에서만 사용할 수 있으며
 	멤버 변수나 로컬 변수에서는 사용 불가능하다.
 */
+//Test117
 
 
 // 추상 클래스
@@ -53,7 +54,7 @@ abstract class SortInt117
 	// 추상 메소드
 	protected abstract void sorting();
 
-	protected int dataLegth()
+	protected int dataLength()
 	{
 		return value.length;
 	}
@@ -133,15 +134,17 @@ public class Test117 extends SortInt117
 	@Override
 	protected void sorting()
 	{
-		for(int i=0; i<data.length-1; i++)
+		// 정의 → 완성
+
+		// selection sort
+		for(i=0; i<dataLength()-1; i++)
 		{
-			for(int j=i+1; j<data.length; j++)
+			for(j=i+1; j<dataLength(); j++)
 			{
-				if(data[i]>data[j])
-				{
-					data[i] = data[i]^data[j];
-					data[j] = data[j]^data[i];
-					data[i] = data[i]^data[j];
+				// 크기비교
+				if(compare(i, j)>0)
+				{	// 자리바꿈
+					swap(i, j);
 				}
 			}
 		}
@@ -164,3 +167,10 @@ public class Test117 extends SortInt117
 		System.out.println();
 	}
 }
+
+// 실행결과
+/*
+Source Data : 7 10 3 8 7
+Sorted Data : 3 7 7 8 10
+계속하려면 아무 키나 누르십시오 . . .
+*/

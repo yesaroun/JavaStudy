@@ -30,77 +30,89 @@
 // 22 31 32 33 40 41
 
 import java.util.Random;
+import java.util.Arrays;
 
 class Lotto
 {	
 	private int[] num;
 
+	// 생성자
 	Lotto()
 	{
-		
+		num = new int[6];
 	}
 
-	int numArr = num int[5];
-	boolean flag;
-	int pass = 0;
+	// getter
+	public int[] getNum()
+	{
+		return num;
+	}
 
-	public int randomNum(){
+	// 6개의 난수를 발생시키는 메소드 정의
+	public void start()
+	{
 		Random rd = new Random();
-		
-		for(int i=0; i<5; i++)
+		int n;
+		int cnt=0;
+
+		jump:
+
+		while (cnt<6)				// 0 1 2 3 4 5
 		{
-			numArr[i] = rd.nextInt(45)+1;
-		}
+			n = rd.nextInt(45)+1;	// 1~45			// 10
 
-	
-
-		do
-		{
-			flag = false;
-			pass++;
-
-			for(int i=0; i<4; i++)
+			for (int i=0; i<cnt; i++)
 			{
-				if(numArr[i]==numArr[i+1])
+				if(num[i]==n)
 				{
-					do
-					{
-						numArr[i+1] = rd.nextInt(45)+1;
-					}
-					while (numArr[i]==numArr[i+1]);
+					continue jump;
 				}
-				
-				if(numArr[i]>numArr[i+1])
-				{
-					numArr[i]^numArr[i+1] = numArr[i];
-					numArr[i+1]^numArr[i] = numArr[i+1];
-					numArr[i]^numArr[i+1] = numArr[i];
-				}
-				
 			}
-		}
-		while ();
 
+			num[cnt++] = n;			//num[0] num[1] num[2] num[3] num[4] num[5]
+		}
 		
-	}	
+		// 정렬 메소드 호출
+		sorting();
+	}
+
+	// 정렬 메소드 정의
+	private void sorting()
+	{
+		Arrays.sort(num);	
+	}
+	
 }
 
 
-public class Test148{
+public class Test1481{
 	public static void main(String[] args)
 	{
 		// Lotto 클래스 기반 인스턴스 생성
 		Lotto lotto = new Lotto();
 
-
 		// 기본 5게임
 		for(int i=1; i<=5; i++)
 		{
 			// 로또 게임 수행
-			lotto[] lottoArr = new lotto[]
+			lotto.start();
 
-			
 			// 결과 출력
+			for(int n : lotto.getNum())
+			{
+				System.out.printf("%4d", n);
+			}
+			System.out.println();
 		}
 	}
 }
+
+// 실행 결과
+/*
+   2  23  30  34  38  43
+   3   8  11  20  21  23
+   1   2   7  13  32  45
+  17  23  24  32  34  44
+   1   5  18  37  38  43
+계속하려면 아무 키나 누르십시오 . . .
+*/

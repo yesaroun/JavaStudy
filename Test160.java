@@ -22,10 +22,12 @@
 	한쪽 끝에서만 접근이 가능한 스택과 달리
 	시퀀스 개념의 인덱스 값을 이용하여 자료 구조의 임의의 지점에서
 	저장 및 접근이 가능하다.
+	(시퀀스 하면 은행의 번호표를 떠올리면 좋겠다/ 순차적으로 번호가 매겨지는것)
 
 	벡터의 시퀀스 구조는 
 	List 인터페이스를 통해 제공받고 있기 때문에
 	List 인터페이스의 모든 메소드를 사용할 수 있다.
+	(리스트 인터페이스보다 벡터가 먼저 만들어짐 그래서 벡터만 가지고 있던 메소드나 독특한 성질이 있었는데 그래서 같은 기능을 수행하는 메소드가 있음)
 
 	- void add(int index, E element)
 	- void insertElementAt(E obj, int index)
@@ -103,7 +105,7 @@
 */
 
 import java.util.Vector;
-import java.util. Iterator;
+import java.util.Iterator;
 
 public class Test160
 {
@@ -118,7 +120,7 @@ public class Test160
 		// Vector(벡터) 자료 구조 v 생성
 		Vector<Object> v = new Vector<Object>();
 
-		// v라는 젝터 자료그조에 colors 배열에 담겨있는 데이터 담아내기
+		// v라는 벡터 자료구조에 colors 배열에 담겨있는 데이터 담아내기
 		// add()
 		for(i=0; i<colors.length; i++)
 		{
@@ -168,11 +170,7 @@ public class Test160
 			str = (String)it.next();
 			System.out.print(str + " ");
 		}
-
 		System.out.println();
-
-
-
 	}
 }
 
